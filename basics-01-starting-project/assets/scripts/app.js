@@ -1,6 +1,12 @@
 let currentResult = 0;
-let calculationDescription = '10';
 
-currentResult = currentResult + 10;
+function add() {
+  if (typeof userInput.value !== 'number') {
+        throw { message: 'Invalid input', name: 'add' };
+  }
 
-outputResult(currentResult, calculationDescription);
+  currentResult = currentResult + userInput.value;
+  outputResult(currentResult, `Rssult: ${currentResult}`);
+}
+
+addBtn.addEventListener('click', add);
